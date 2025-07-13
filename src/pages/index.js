@@ -5,5 +5,5 @@ export default function Home() {
     incrementViewCount("home");
   }, []);
 
-  return <div className="max-w-[940px] mx-auto"></div>;
+  return <div className="w-full"></div>;
 }
