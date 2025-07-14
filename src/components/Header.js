@@ -2,7 +2,7 @@ import Image from "next/image";
 export default function Header({ isDark, toggleDarkMode }) {
   return (
     <header className="py-4 flex justify-between px-4">
-      <h1 className="text-sm sm:text-xl font-bold text-gray-800 dark:text-white">
+      <h1 className="text-2xl font-bold text-gray-800 dark:text-white">
         Coderhythm
       </h1>
       <div className="flex items-center gap-4">
