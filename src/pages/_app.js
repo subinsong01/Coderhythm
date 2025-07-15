@@ -2,9 +2,10 @@ import useDarkMode from "@/hook/useDarkMode";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "@/styles/globals.css";
+import { appWithTranslation } from "next-i18next";
 import TotalView from "@/components/TotalView";
-
-export default function App({ Component, pageProps }) {
+import nextI18NextConfig from "../../next-i18next.config";
+function App({ Component, pageProps }) {
   const [isDark, toggleDarkMode] = useDarkMode();
 
   return (
@@ -21,3 +22,4 @@ export default function App({ Component, pageProps }) {
     </div>
   );
 }
+export default appWithTranslation(App, nextI18NextConfig);

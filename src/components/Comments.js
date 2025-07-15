@@ -1,6 +1,12 @@
 import Giscus from "@giscus/react";
+import { useTranslation } from "next-i18next";
 
 export default function Comments() {
+  const { i18n } = useTranslation();
+  const lang = ["ko", "en", "ja"].includes(i18n.language)
+    ? i18n.language
+    : "en";
+
   return (
     <Giscus
       repo="subinsong01/Coderhythm"
@@ -13,7 +19,7 @@ export default function Comments() {
       emitMetadata="0"
       inputPosition="bottom"
       theme="preferred_color_scheme"
-      lang="ko"
+      lang={lang}
       loading="lazy"
     />
   );
