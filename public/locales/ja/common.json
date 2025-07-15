@@ -1,4 +1,6 @@
 {
   "name": "スビン",
-  "greeting": "こんにちは"
+  "greeting": "こんにちは",
+  "views": "閲覧数",
+  "views_suffix": " 回"
 }
