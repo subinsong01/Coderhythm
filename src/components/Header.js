@@ -1,11 +1,33 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
+import useMobile from "@/hook/useMobile";
 export default function Header({ isDark, toggleDarkMode }) {
+  const router = useRouter();
+  const { t, i18n, ready } = useTranslation("common");
+  const isMobile = useMobile();
+
+  const changeLanguage = (e) => {
+    const selectedLang = e.target.value;
+    console.log("Selected language:", selectedLang);
+    router.push(router.pathname, router.asPath, { locale: selectedLang });
+  };
+
   return (
     <header className="py-4 flex justify-between px-4">
-      <h1 className="text-2xl font-bold text-gray-800 dark:text-white">
+      <h1 className="text-lg sm:text-2xl font-bold text-gray-800 dark:text-white">
         Coderhythm
       </h1>
       <div className="flex items-center gap-4">
+        <select
+          onChange={changeLanguage}
+          value={router.locale}
+          className="px-2 py-1 border rounded-md text-sm dark:bg-gray-800 dark:text-white"
+        >
+          <option value="ko">🇰🇷 한국어</option>
+          <option value="en">🇺🇸 English</option>
+          <option value="ja">🇯🇵 日本語</option>
+        </select>
         <a
           href="https://github.com/subinsong01"
           target="_blank"
@@ -21,7 +43,7 @@ export default function Header({ isDark, toggleDarkMode }) {
               className="object-cover"
             />
           </div>
-          수빈
+          {!isMobile && <span suppressHydrationWarning>{t("name")}</span>}
         </a>
         <button
           onClick={toggleDarkMode}
