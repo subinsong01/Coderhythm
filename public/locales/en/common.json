@@ -1,4 +1,6 @@
 {
   "name": "Subin",
-  "greeting": "Hello"
+  "greeting": "Hello",
+  "views": "Views",
+  "views_suffix": " times"
 }

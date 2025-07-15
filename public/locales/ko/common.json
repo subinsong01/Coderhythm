@@ -1,4 +1,6 @@
 {
   "name": "수빈",
-  "greeting": "안녕하세요"
+  "greeting": "안녕하세요",
+  "views": "조회수",
+  "views_suffix": "회"
 }
